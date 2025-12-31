@@ -1,11 +1,11 @@
 {
-  "name": "mcp-server-shellkode",
+  "name": "mcp-server-aws",
   "version": "1.0.0",
   "private": true,
-  "description": "An MCP server providing read-only access to AWS resources for Shellkode",
+  "description": "An MCP server providing read-only access to AWS resources",
   "main": "dist/index.js",
   "bin": {
-    "mcp-server-shellkode": "./dist/index.js"
+    "mcp-server-aws": "./dist/index.js"
   },
   "files": [
     "dist"
@@ -20,7 +20,6 @@
     "mcp",
     "server",
     "aws",
-    "shellkode",
     "ai",
     "llm"
   ],

@@ -1,4 +1,4 @@
-# AWS MCP Server for Shellkode
+# AWS MCP Server
 
 This is a Model Context Protocol (MCP) server that provides read-only access to AWS resources.
 It is built using TypeScript and the AWS SDK v3.
@@ -44,7 +44,7 @@ Since this is a private tool, you can share it with your team in two main ways:
 
     ```bash
     git clone <your-private-repo-url>
-    cd mcp-server-shellkode
+    cd mcp-server-aws
     npm install
     npm run build
     ```
@@ -55,7 +55,7 @@ Since this is a private tool, you can share it with your team in two main ways:
     ```json
     {
       "mcpServers": {
-        "aws-shellkode": {
+        "aws-mcp": {
           "command": "node",
           "args": ["/path/to/cloned/repo/dist/index.js"],
           "env": {
@@ -78,12 +78,12 @@ You can package the server into a single file and send it to your team (Slack, E
     npm pack
     ```
 
-    This creates a file like `mcp-server-shellkode-1.0.0.tgz`.
+    This creates a file like `mcp-server-aws-1.0.0.tgz`.
 
 2. **Team members** install it globally (or locally):
 
     ```bash
-    npm install -g mcp-server-shellkode-1.0.0.tgz
+    npm install -g mcp-server-aws-1.0.0.tgz
     ```
 
 3. **Configure MCP Client**:
@@ -92,14 +92,15 @@ You can package the server into a single file and send it to your team (Slack, E
     ```json
     {
       "mcpServers": {
-        "aws-shellkode": {
-          "command": "mcp-server-shellkode",
+        "aws-mcp": {
+          "command": "mcp-server-aws",
           "args": [],
           "env": { ... }
         }
       }
     }
-    ```
+
+```
 
 ### Option 2: Running Locally
 
@@ -113,9 +114,9 @@ If you cloned the repository and built it locally:
 ```json
 {
   "mcpServers": {
-    "aws-shellkode": {
+    "aws-mcp": {
       "command": "node",
-      "args": ["/Users/bhaveshkumarparmar/Desktop/Shellkode/MSP-Projects/MCP-server-Shellkode/dist/index.js"],
+      "args": ["/Users/bhaveshkumarparmar/Desktop/Shellkode/MSP-Projects/MCP-server-aws/dist/index.js"],
       "env": {
         "AWS_ACCESS_KEY_ID": "YOUR_ACCESS_KEY",
         "AWS_SECRET_ACCESS_KEY": "YOUR_SECRET_KEY",
