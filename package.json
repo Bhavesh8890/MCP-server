@@ -1,0 +1,67 @@
+{
+  "name": "mcp-server-shellkode",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An MCP server providing read-only access to AWS resources for Shellkode",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-server-shellkode": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "server",
+    "aws",
+    "shellkode",
+    "ai",
+    "llm"
+  ],
+  "author": "Bhavesh Kumar Parmar",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-acm": "^3.958.0",
+    "@aws-sdk/client-auto-scaling": "^3.958.0",
+    "@aws-sdk/client-backup": "^3.958.0",
+    "@aws-sdk/client-budgets": "^3.958.0",
+    "@aws-sdk/client-cloudformation": "^3.958.0",
+    "@aws-sdk/client-cloudfront": "^3.958.0",
+    "@aws-sdk/client-cloudtrail": "^3.958.0",
+    "@aws-sdk/client-cloudwatch": "^3.958.0",
+    "@aws-sdk/client-cloudwatch-logs": "^3.958.0",
+    "@aws-sdk/client-cost-explorer": "^3.958.0",
+    "@aws-sdk/client-dynamodb": "^3.958.0",
+    "@aws-sdk/client-ec2": "^3.958.0",
+    "@aws-sdk/client-ecs": "^3.958.0",
+    "@aws-sdk/client-eks": "^3.958.0",
+    "@aws-sdk/client-elastic-load-balancing-v2": "^3.958.0",
+    "@aws-sdk/client-guardduty": "^3.958.0",
+    "@aws-sdk/client-health": "^3.958.0",
+    "@aws-sdk/client-iam": "^3.958.0",
+    "@aws-sdk/client-lambda": "^3.958.0",
+    "@aws-sdk/client-rds": "^3.958.0",
+    "@aws-sdk/client-route-53": "^3.958.0",
+    "@aws-sdk/client-s3": "^3.958.0",
+    "@aws-sdk/client-secrets-manager": "^3.958.0",
+    "@aws-sdk/client-sns": "^3.958.0",
+    "@aws-sdk/client-ssm": "^3.958.0",
+    "@aws-sdk/client-sts": "^3.958.0",
+    "@aws-sdk/client-support": "^3.958.0",
+    "@aws-sdk/client-wafv2": "^3.958.0",
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "@types/node": "^25.0.3",
+    "dotenv": "^17.2.3",
+    "ip-range-check": "^0.2.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "zod": "^4.2.1"
+  }
+}
