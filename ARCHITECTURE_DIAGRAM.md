@@ -1,8 +1,3 @@
-
-# 🏗️ AWS MCP Server - Architecture & Flow
-
-This diagram illustrates how your natural language request travels from the AI assistant to your AWS infrastructure and back.
-
 ```mermaid
 graph TD
     %% Define Styles
@@ -13,35 +8,35 @@ graph TD
 
     %% Nodes
     User(("👤 User")):::user
-    AI("🤖 AI Assistant\n(Claude / Gemini / IDE)"):::ai
+    AI("🤖 AI Assistant<br>(Claude / Gemini)"):::ai
     MCP_Protocol{{"🔌 MCP Protocol"}}:::mcp
-    Server("⚙️ AWS MCP Server\n(Running Locally/Docker)"):::mcp
+    Server("⚙️ AWS MCP Server<br>(Local/Docker)"):::mcp
     AWS_SDK("📦 AWS SDK v3")
-    AWS_Cloud("☁️ AWS Cloud\n(Resources & APIs)"):::cloud
+    AWS_Cloud("☁️ AWS Cloud<br>(Resources & APIs)"):::cloud
 
     %% Flow - Request
     User -->|1. 'Check my AWS costs'| AI
-    AI -->|2. Identifies Tool\n'get_recent_cost'| MCP_Protocol
+    AI -->|2. Identifies Tool<br>'get_recent_cost'| MCP_Protocol
     MCP_Protocol -->|3. Sends Tool Call| Server
     Server -->|4. Executes Command| AWS_SDK
     AWS_SDK -->|5. API Request| AWS_Cloud
 
     %% Flow - Response
-    AWS_Cloud -.->|6. Returns Data (JSON)| AWS_SDK
+    AWS_Cloud -.->|6. Returns Data JSON| AWS_SDK
     AWS_SDK -.->|7. Returns Object| Server
     Server -.->|8. Formats Result| MCP_Protocol
     MCP_Protocol -.->|9. Sends Tool Result| AI
     AI -.->|10. Summarizes Answer| User
 
     %% Grouping
-    subgraph "Your Machine / Local Environment"
+    subgraph Local_Computer ["Your Machine / Local Environment"]
         AI
         MCP_Protocol
         Server
         AWS_SDK
     end
 
-    subgraph "External"
+    subgraph AWS ["External"]
         AWS_Cloud
     end
 ```
